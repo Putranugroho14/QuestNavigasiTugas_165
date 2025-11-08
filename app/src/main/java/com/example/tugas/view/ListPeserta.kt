@@ -25,4 +25,33 @@ data class Peserta(
 fun ListPesertaScreen(
     onBerandaClick: () -> Unit,
     onFormulirClick: () -> Unit
-)
+) {
+    val dataPeserta = listOf(
+        Peserta("Putra", "Laki-laki", "Mahasiswa", "Bantul"),
+        Peserta("Asha", "Perempuan", "Mahasiswa", "Genuk")
+    )
+
+    Scaffold(
+        topBar = { TopAppBar(title = { Text(stringResource(R.string.list_daftar_peserta)) }) },
+        bottomBar = {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Button(onClick = onBerandaClick) { Text(stringResource(R.string.btn_beranda)) }
+                Button(onClick = onFormulirClick) { Text(stringResource(R.string.btn_formulir)) }
+            }
+        }
+    ) { isiRuang ->
+        LazyColumn(
+            modifier = Modifier.fillMaxSize().padding(isiRuang).padding(horizontal = 16.dp),
+            contentPadding = PaddingValues(vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(dataPeserta) { peserta ->
+                ParticipantCard(peserta = peserta)
+            }
+        }
+    }
+}
+
