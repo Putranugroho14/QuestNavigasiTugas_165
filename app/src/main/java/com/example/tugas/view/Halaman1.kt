@@ -30,5 +30,17 @@ fun Halaman1(onMasukClick: () -> Unit) {
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
-    )
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Spacer(modifier = Modifier.height(50.dp))
+            Text(
+                text = "Selamat Datang",
+                fontSize = 28.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color(0xFF5A4C9B)
+            )
+        }
+
+
+    }
 }
