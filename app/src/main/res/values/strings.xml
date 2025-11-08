@@ -4,5 +4,6 @@
     <string name="tampil">Detail Data</string>
     <string name="back">Kembali</string>
     <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
 
 </resources>
