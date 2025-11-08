@@ -41,6 +41,23 @@ fun Halaman1(onMasukClick: () -> Unit) {
             )
         }
 
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = R.drawable.barcelona),
+                contentDescription = "Logo Aplikasi",
+                modifier = Modifier.size(250.dp)
+            )
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Text(
+                text = "Putra Nugroho\n20230140165",
+                fontSize = 18.sp,
+                textAlign = TextAlign.Center,
+                color = Color.DarkGray
+            )
+        }
+
 
     }
 }
