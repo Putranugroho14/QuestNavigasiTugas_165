@@ -27,7 +27,61 @@ fun DataIsian(
         Column(
             modifier = Modifier.padding(isiRuang).fillMaxSize().padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.SpaceBetween
-        ) {}
+        ) {
+            Card(
+                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+
+
+                    Text(text = "NAMA LENGKAP", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                    OutlinedTextField(
+                        value = namaLengkap, onValueChange = { namaLengkap = it },
+                        label = { Text("Isikan nama lengkap") },
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp), singleLine = true
+                    )
+
+
+                    Text(text = "JENIS KELAMIN", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        RadioButtonOption(label = "Laki-laki", selected = selectedJenisKelamin == "Laki-laki", onClick = { selectedJenisKelamin = "Laki-laki" })
+                        RadioButtonOption(label = "Perempuan", selected = selectedJenisKelamin == "Perempuan", onClick = { selectedJenisKelamin = "Perempuan" })
+                    }
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+
+                    Text(text = "STATUS PERKERJAAN", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                    Column(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            RadioButtonOption(label = "Mahasiswa", selected = selectedStatusKerja == "Mahasiswa", onClick = { selectedStatusKerja = "Mahasiswa" })
+                            RadioButtonOption(label = "Wiraswasta", selected = selectedStatusKerja == "Wiraswasta", onClick = { selectedStatusKerja = "Wiraswasta" })
+                        }
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth().padding(top = 4.dp), // Menambahkan jarak atas
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            RadioButtonOption(label = "Guru", selected = selectedStatusKerja == "Guru", onClick = { selectedStatusKerja = "Guru" })
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(8.dp))
+
+
+                    Text(text = "ALAMAT", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                    OutlinedTextField(
+                        value = alamat, onValueChange = { alamat = it },
+                        label = { Text("Isikan alamat") },
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp), minLines = 3
+                    )
+                }
             }
 
             Row(
