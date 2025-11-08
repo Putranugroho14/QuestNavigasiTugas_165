@@ -12,4 +12,7 @@
     <string name="status_mahasiswa">Mahasiswa</string>
     <string name="status_wiraswasta">Wiraswasta</string>
     <string name="status_guru">Guru</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_beranda">Beranda</string>
+    <string name="btn_formulir">Formulir</string>
 </resources>
