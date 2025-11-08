@@ -9,5 +9,7 @@
     <string name="alamat">Alamat</string>
     <string name="jk_laki">Laki-laki</string>
     <string name="jk_perempuan">Perempuan</string>
-
+    <string name="status_mahasiswa">Mahasiswa</string>
+    <string name="status_wiraswasta">Wiraswasta</string>
+    <string name="status_guru">Guru</string>
 </resources>
