@@ -55,3 +55,26 @@ fun ListPesertaScreen(
     }
 }
 
+@Composable
+fun ParticipantCard(peserta: Peserta) {
+    Card(modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(2.dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(modifier = Modifier.fillMaxWidth()) {
+                DataRowItem(label = stringResource(R.string.nama_lengkap), value = peserta.namaLengkap, modifier = Modifier.weight(1f))
+                DataRowItem(label = stringResource(R.string.jenis_kelamin), value = peserta.jenisKelamin, modifier = Modifier.weight(1f))
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                DataRowItem(label = stringResource(R.string.status_kerja), value = peserta.statusKerja, modifier = Modifier.weight(1f))
+                DataRowItem(label = stringResource(R.string.alamat), value = peserta.alamat, modifier = Modifier.weight(1f))
+            }
+        }
+    }
+}
+@Composable
+fun DataRowItem(label: String, value: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Text(label.uppercase(), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(value, fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+    }
+}
