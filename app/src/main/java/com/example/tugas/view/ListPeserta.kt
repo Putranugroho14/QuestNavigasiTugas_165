@@ -20,3 +20,9 @@ data class Peserta(
     val alamat: String
 )
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ListPesertaScreen(
+    onBerandaClick: () -> Unit,
+    onFormulirClick: () -> Unit
+)
